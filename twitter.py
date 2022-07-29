@@ -44,9 +44,11 @@ u_top = []
 with open("config.yaml","r") as file:
     top_accounts = yaml.safe_load(file)
 
-users = client.get_users(usernames=top_accounts)
+users = client.get_users(usernames=top_accounts['accounts'])
 
 top_user_id =  [user.id for user in users.data]
+
+words = "|".join(top_accounts['words'])
 
 for tweet in tweets: 
     screen_names = tweet.user.screen_name
@@ -54,7 +56,7 @@ for tweet in tweets:
     desription = tweet.user.description
     created = tweet.user.created_at.date()
 
-    if  followers < 20000 and re.findall(r'Free Mint|Private Discord|Discord invite only|Coming soon|DM for collaboration|DM for|Discord closed|No discord|No Roadmap|Mint date|Founded by|Created by|Minting|Discord: https?:\/\/t.co\/\S+|Discord:|Mint:',desription) and created.year == 2022 and created.month >= 6:
+    if  followers < 20000 and re.findall(pattern = words,string = desription) and created.year == 2022 and created.month >= 6:
         fol = tweet.user.follower_ids()
         top_user = set(top_user_id) & set(fol)
         u_top.append(top_user)
@@ -70,8 +72,10 @@ for tweet in tweets:
 
 # write each tweet as a row to a data Frame
 # manually inspect the information
+# make yaml list case sensitive
 # .JOIN method in strings to join items in the list
 # Switch to a stream for live data 
+# Do a readme file for the project
 
 print(u_top)
 print(final_users)
