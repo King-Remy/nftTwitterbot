@@ -56,7 +56,7 @@ for tweet in tweets:
     desription = tweet.user.description
     created = tweet.user.created_at.date()
 
-    if  followers < 20000 and re.findall(pattern = words,string = desription) and created.year == 2022 and created.month >= 6:
+    if  followers < 20000 and re.findall(pattern = words,string = desription) and created.year == 2022 and created.month >= 5:
         fol = tweet.user.follower_ids()
         top_user = set(top_user_id) & set(fol)
         u_top.append(top_user)

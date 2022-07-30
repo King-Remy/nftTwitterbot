@@ -24,19 +24,20 @@ accounts:
   - 'ruledout_'
 
 words:
-  - Free Mint
-  - Private Discord
-  - Discord invite only
-  - Coming soon
-  - DM for collaboration
-  - DM for
-  - Discord closed
-  - No discord
-  - No Roadmap
-  - Mint date
-  - Founded by
-  - Created by
-  - Minting
-  - 'Discord: https?:\/\/t.co\/\S+'
-  - 'Discord:'
+  - (Free|free) (Mint|mint)
+  - (Private|private) (Discord|discord)
+  - (Discord|discord) (Invite|invite) (Only|only)
+  - (Coming|coming) (soon|Soon)
+  - (DM|dm|Dm) (for|For) (collaboration|Collaboration)
+  - (DM|dm|Dm) (for|For)
+  - (Discord|discord) closed
+  - (No|no) (Discord|discord)
+  - (No|no) (Roadmap|roadmap)
+  - (Mint|mint) (date|Date)
+  - (Founded|founded) (by|By)
+  - (Created|created) (by|By)
+  - (Minting|minting)
+  - '(Discord|discord): https?:\/\/t.co\/\S+'
+  - '(Discord|discord):'
   - 'Mint:'
+  - '(Supply|supply)'
